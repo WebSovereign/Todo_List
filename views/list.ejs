@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+    <div class="box" id="heading">
+      <!-- Must have an opening and closing ejs tag on EACH line in order to work -->
+      <h1> <%= kindOfDay %> </h1>
+    </div>
+
+    <div class="box">
+      <% for (let i = 0; i < listItems.length; i++) { %>
+        <div class="item">
+          <input type="checkbox">
+          <p> <%= listItems[i] %> </p>
+        </div>
+      <% } %>
+
+      <form class="item" action="/" method="POST">
+        <input type="text" name="new_item" placeholder="New Item" autocomplete="off">
+        <button type="submit">+</button>
+      </form>
+    </div>
+
+  </body>
+</html>
